@@ -1,0 +1,62 @@
+\documentclass[10pt,twocolumn,pdftex]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage[pdftex,colorlinks=true,citecolor=black,filecolor=black,%
+            linkcolor=black,urlcolor=black]{hyperref}
+\usepackage{times}
+%\usepackage{listings}
+%\usepackage{fancyvrb}
+%\usepackage{amsmath}
+%\usepackage{amsthm}
+%\usepackage{amssymb}
+
+%\lstset{ % for our code environment
+%    language={},
+%    basicstyle=\ttfamily}
+%\let\code\lstinline
+
+\title{Facial Recognition based Access Revocation}
+\author{Vicky Katara \\
+\url{vpkatara@ncsu.edu}}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+A facial recognition based access revocation method for a secure computing environment is disclosed here. Several traditional and non-traditional access authorization methods exist. No contemporary methods exist which continuously monitor the presence of a valid authorized user. The method described here will continuously monitor for the presence of a face with reasonably matching characteristics with those of an authorized user. Further, the system will look for tell-tale signs of manipulation such as photography/video based masquerading exploitations of the system. The system will be tested for accuracy and consistency across numerous test cases made with different test subjects of various skin colors. Such a system will offer complete and robust session end point determination on a secure system.  
+\end{abstract}
+
+\newpage
+\hspace{1em}
+\newpage
+
+\section{Related Work}
+
+Existing solutions for secured system access use some access control method to authenticate a user into the system. Most of these systems do not monitor for session end point determination in order to revoke access to the secured system. Thus the security of the system now depends on the diligence of an authenticated user in either voluntarily requesting access revocation or manually restricting access to the physical interface of the system from unauthorized access. Further, most secure systems are configured to automatically end the session only when system inactivity period has crossed a well defined, and often well known time period. Such a system is open to attacks by a malicious user who may take over an authenticated user's session before the system reaches the threshold period of inactivity~\cite{xue05}. Further, since the session can realistically be kept active for an unlimited period of time even by malicious interaction, such a session end-point determination system is highly ineffective.
+
+Biometrics, in this case facial recognition can provide an effective safeguard against such a malicious attack by using a camera to continuously monitoring the physical environment in front of the system endpoint to check for the existence of a biometric signal, in this case an image, matching an prerecorded signal known to belong to an authenticated user. However, existing biometric authentication schemes suffer from a known vulnerability since well known methods exist for stealing and reproducing stable biometric signals with relative ease.~\cite{log03}~\cite{qin05}~\cite{uus04}. %One way to remove this vulnerability is to use the biometric signals only in verification mode where the biometric signals aren't the only source of authentication.
+
+Spoofing is an attempt to gain authentication through a biometric system by presenting a counterfeit evidence of a valid user~\cite{nix08}. Existing face recognition systems are known to be vulnerable to spoofing mask attacks~\cite{qin05}~\cite{erdo13}. Using 2D face recognition is one way to make the system more robust against spoofing mask attacks~\cite{mmc11}~\cite{nkjd13}. Contemporary face recognition systems, at one point, faced a trivial problem of identifying faces of twins from each other~\cite{daug03}~\cite{dv03}. This problem has since been solved by employing a non trivial solution based on 'bending invariant canonical representation'~\cite{amr05}. This technique has since been incorporated in almost all future systems.
+
+Another traditional issue with face recognition technology is the effect of facial expressions on the underlying recognition model. It was originally thought that the information used to recognize a face does not depend on facial expression~\cite{bryo86}. Later on, substantive studies proved that strong emotional responses would cause significant errors in the results of face recognition models~\cite{endo1992}~\cite{givens03}. However, using 'bending invariant canonical representation' makes the underlying recognition model insensitive to head orientations and facial expressions~\cite{dv03}~\cite{amr05}. 
+
+The accuracy of face detection schemes using skin color and tone are vulnerable to large changes in skin tones across different subjects having large variations in their skin tones~\cite{vlad03}. A combination of 3D color spaces and feature detection schemes can negate the effects of these large variations in skin color~\cite{garcia99}~\cite{kovac03}. The accuracy of face recognition systems has traditionally been vulnerable to the use of face images with large age differences~\cite{hsd07}~\cite{rs07}. The NIST has reported that performance in some of the algorithms tested in~\cite{frvt14} degraded at approximately 5 percentage points per year. This problem continues to cause unknown variations in accuracy of prevalent systems which may compare facial data captured over extended periods of time~\cite{frvt14}. Another major stumbling block for face recognition systems was to detect faces despite the existence of complex background patterns~\cite{birg11}. However, standard knowledge-based recognition approaches have been discovered to efficiently find face locations in a complex background even when the size of the face is unknown~\cite{guang94}. Furthermore, motion and color based location systems have been proved to be robust in locating faces in a complex colored background as well as efficient enough to be used as the first stage in real time face recognition applications~\cite{choong96}. In addition, indoor and outdoor lighting changes between captured and recorded images can reduce the predictability in accuracy of facial recognition systems~\cite{jhdk05}. Large variations in side lighting between images, especially those captured in distinct lighting settings remains a problem for state-of-the-art algorithms~\cite{xjmn94}~\cite{jrb10}. 
+
+There have been some concerns with using a video feed instead of a still image feed for facial recognition algorithms, however studies have found that, contrary to expectations, recognition performance using video sequences was similar to the performance using still images~\cite{frvt02}.
+
+One concern with traditional systems has been the performance of the system with non-frontal presentation of faces~\cite{blanz05}. However, usage of the morphable models - a technique of taking a facial image from any angle and projecting what the subject might look like facing forward - has dramatically increased performance with non-frontal images~\cite{vbtv99}~\cite{pp09}~\cite{rg11}~\cite{ps13}.
+
+Time Complexity of the face recognition algorithms was initially thought to be a bottleneck in having an efficient system which could effectively function in real time~\cite{aspi92}. However, in more recent times, logarithmic time complexity algorithms have been developed so as to allow credible real time monitoring systems which use face recognition~\cite{wmbXX}~\cite{rnd14}~\cite{ami13}.
+
+One of the central issues faced by biometric systems in general, especially face recognition systems is its perception as a threat to privacy~\cite{delac04}. Any system that constantly monitors biometric signals has the potential to induce a fear in people that the biometric identifiers could be used for linking personal information across different systems or databases~\cite{jain04}. Designing for and overcoming such social issues has been a major challenge for all contemporary biometric security systems.
+
+\bibliographystyle{unsrt}
+\bibliography{papers}
+
+\end{document}
+
+

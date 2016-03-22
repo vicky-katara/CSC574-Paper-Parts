@@ -1,0 +1,24 @@
+\begin{thebibliography}{1}
+
+\bibitem{xue05}
+Xue~Dong Yang, Peter Kort, and Richard Dosselmann.
+\newblock {Automatically Log Off Upon Disappearance of Facial Image}.
+\newblock In {\em Defense Research and Development Ottawa, Canada, Contract
+  Report}, 2005.
+
+\bibitem{frvt02}
+P.~Jonathon Phillips, Patrick Grother, and Ross J.~Micheals et~al.
+\newblock {Face Recognition Vendor Test 2002: Evaluation Report}.
+\newblock In {\em NIST Interagency Report 6965}, 2003.
+
+\bibitem{amr05}
+Alexander~M. Bronstein, Michael~M. Bronstein, and Ron Kimmel.
+\newblock {Three-Dimensional Face Recognition}.
+\newblock In {\em International Journal of Computer Vision}, 2005.
+
+\bibitem{kovac03}
+J.~Kovac, P.~Peer, and F.~Solina.
+\newblock {Human skin color clustering for face detection}.
+\newblock In {\em The IEEE Region 8 EUROCON 2003. Computer as a Tool}, 2003.
+
+\end{thebibliography}

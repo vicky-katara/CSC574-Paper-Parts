@@ -1,0 +1,153 @@
+\documentclass[10pt,twocolumn,pdftex]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage[pdftex,colorlinks=true,citecolor=black,filecolor=black,%
+            linkcolor=black,urlcolor=black]{hyperref}
+\usepackage{times}
+%\usepackage{listings}
+%\usepackage{fancyvrb}
+%\usepackage{amsmath}
+%\usepackage{amsthm}
+%\usepackage{amssymb}
+
+%\lstset{ % for our code environment
+%    language={},
+%    basicstyle=\ttfamily}
+%\let\code\lstinline
+
+\title{Facial Recognition based Access Revocation}
+\author{Vicky Katara \\
+\url{vpkatara@ncsu.edu}}
+\date{March 24, 2016}
+
+% Simple macro to help with research questions
+\newcounter{rqcounter}
+\setcounter{rqcounter}{0}
+% Usage: \newrq{label}{question}
+\newcommand{\newrq}[2]{\noindent\refstepcounter{rqcounter}\textbf{RQ\arabic{rqcounter}:} {\em #2}\label{#1}}
+% Usage: \rqref{label}
+\newcommand{\rqref}[1]{\textbf{RQ\ref{#1}}}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Problem Statement}
+
+Several traditional and non-traditional (for example, biometric) authentication methods exist. Most contemporary secure terminal systems measure inactivity on standard I/O devices like the keyboard / mouse, so as to lock the terminal after a predefined and often default time period of inactivity~\cite{xue05}. No contemporary methods exist which continuously monitor the physical presence of an authorized user during the length of an open session. An authenticated user may step away from the terminal with an open session for an unpredictable length of time. This leaves the system vulnerable to malicious users who may physically hijack the session before terminal locks itself due to inactivity.
+
+\section{Solution Idea}
+
+One way to provide continuous session monitoring is to test the video signal of the frontal area of the secured terminal for the presence of a face with reasonably matching characteristics with those of the authenticated user. The session monitoring system will automatically be initiated when authentication completes. As soon as the session begins, it will capture the facial characteristics of the authenticated user and the maintain them as trusted characteristics in the memory. It will periodically capture candidate facial characteristics of the face in front of the terminal, and match them with the trusted characteristics to pass the threshold matching criteria. If the similarity between the characteristics is below a certain defined threshold, the system will revoke access from the user by locking the terminal. If the similarity is above the threshold, the system will replace the trusted characteristics with the candidate characteristics so as to account for slowly changing effects of the environment. 
+
+The system will also look for tell-tale signs of manipulation such as photography / video based masquerading exploitations of the system. It will test for expected small changes in similarity between facial characteristics. A match of characteristics above a certain 'perfect' threshold is usually a sign of exploitation, and encountering such a scenario, the system would revoke authentication. Further, the system would use facial recognition algorithms robust against changes in face yaw, skin color and facial expression, among others~\cite{frvt02}~\cite{amr05}~\cite{kovac03}.
+
+%Solution Idea: A short description (one or two paragraphs) of how you
+%propose to solve the problem. If the goal of your project is an
+%empirical evaluation of some sort, name this section "Study Goal." 
+
+%Note that the solution idea may have been refined from the previous
+%milestones. If there are significant changes, please discuss with the
+%instructor.
+
+\section{Threat Model}
+
+A description (at least several paragraphs) describing the security
+assumptions for your solution idea. A good threat model should describe:
+(a) who is the adversary, (b) what are the goals of the adversary, (c)
+what are the capabilities of the adversary, and (d) what is the trusted
+computing base (TCB). Note, when describing the adversary capabilities,
+if is often useful to describe assumptions of what the adversary cannot
+do (e.g., does not have physical access to a device).
+
+\section{Research Questions}
+
+A list of at least three (more desired) research questions that inquire
+about the problem and/or solution idea. Research questions should be
+specific, concrete, and unambiguous questions. For example, research
+questions may inquire about protection against specific threats,
+performance overhead, scalability, and usability.
+
+\newrq{rq:what}{What are your research questions?}
+
+\newrq{rq:three}{There should be at least three, but more would be better.}
+
+\newrq{rq:specific}{Make sure the questions are specific, concrete, and unambiguous.}
+
+\section{Methodology}
+
+A high level description of how you plan to answer the research
+questions. For example, a project might design and implement a
+protection and then empirically evaluate the protection in some way.
+
+\section{Evaluation Plan}
+
+A description of how you plan to answer the research questions. The
+evaluation plan may mirror the research questions, or multiple research
+questions (e.g., \rqref{rq:what} and \rqref{rq:three}) may be answered by
+a single part of the evaluation. The proposed evaluation may be split
+into both the design and a more formal evaluation section. In system
+security research papers, the design section often provides a form of
+evaluation by describing how the solution defends against potential
+attacks. If possible, a security evaluation section should summarize the
+defense against the threat model. Systems security papers also have more
+formal evaluation sections that consist of several experiments. For each
+experiment, you should describe: (a) experimental setup (e.g., hardware,
+software, and datasets used), (b) specific measurements and metrics you
+plan to use, and (c) what constitutes success.
+
+\subsection{Name of Experiment 1}
+
+State some hypothesis for the experiment. Note which research question
+it is designed to address.
+
+\subsubsection{Experimental Setup}
+
+Describe the hardware, software, and datasets you intend to use. Note
+that you should be realistic in what you can get access to.
+
+\subsubsection{Expected Results}
+
+Describe the specific measurements and metrics you plan to use. Describe
+what constitutes success (i.e., what you expect to achieve).
+
+\subsection{Name of Experiment 2}
+
+State some hypothesis for the experiment. Note which research question
+it is designed to address.
+
+\subsubsection{Experimental Setup}
+
+Describe the hardware, software, and datasets you intend to use. Note
+that you should be realistic in what you can get access to.
+
+\subsubsection{Expected Results}
+
+Describe the specific measurements and metrics you plan to use. Describe
+what constitutes success (i.e., what you expect to achieve).
+
+\subsection{Name of Experiment 3}
+
+State some hypothesis for the experiment. Note which research question
+it is designed to address.
+
+\subsubsection{Experimental Setup}
+
+Describe the hardware, software, and datasets you intend to use. Note
+that you should be realistic in what you can get access to.
+
+\subsubsection{Expected Results}
+
+Describe the specific measurements and metrics you plan to use. Describe
+what constitutes success (i.e., what you expect to achieve).
+
+\bibliographystyle{unsrt}
+\bibliography{papers}
+
+
+\end{document}
+
+
